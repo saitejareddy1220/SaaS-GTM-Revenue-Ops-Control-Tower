@@ -58,15 +58,16 @@ This control tower provides unified visibility into:
 
 ## Dashboard Demo
 
-A comprehensive demo video (`dashboard.mp4`) is available in the local repository showcasing all 5 pages of the interactive dashboard:
+See the complete 5-page interactive dashboard in action:
 
-- Executive Overview with KPIs
-- Pipeline analytics and win rates  
-- Cohort retention heatmaps
-- Support metrics and SLA tracking
-- Automated anomaly detection
+https://github.com/saitejareddy1220/SaaS-GTM-Revenue-Ops-Control-Tower/assets/dashboard.mp4
 
-*Note: Video file excluded from repository due to size constraints. Available locally in project root.*
+**Dashboard Pages:**
+- Executive Overview with KPIs (MRR, ARR, CAC, Activation Rate)
+- Pipeline Analytics (Win rates by segment, sales cycle)  
+- Cohort Retention Heatmaps (12-month retention tracking)
+- Support Metrics (Ticket volume, SLA compliance)
+- Anomaly Detection (Automated spike/drop identification)
 
 ---
 

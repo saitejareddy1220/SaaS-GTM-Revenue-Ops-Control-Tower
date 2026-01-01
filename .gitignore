@@ -36,4 +36,3 @@ dbt/logs/
 # Large media files (keep dashboard.mp4)
 *.mov
 *.MOV
-dashboard.mp4
