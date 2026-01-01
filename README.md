@@ -58,9 +58,9 @@ This control tower provides unified visibility into:
 
 ## Dashboard Demo
 
-See the complete 5-page interactive dashboard in action:
+Watch the complete 5-page interactive dashboard walkthrough:
 
-https://github.com/saitejareddy1220/SaaS-GTM-Revenue-Ops-Control-Tower/assets/dashboard.mp4
+**[📺 View Dashboard Demo Video](https://github.com/saitejareddy1220/SaaS-GTM-Revenue-Ops-Control-Tower/releases/download/v1.0/dashboard.mp4)**
 
 **Dashboard Pages:**
 - Executive Overview with KPIs (MRR, ARR, CAC, Activation Rate)
