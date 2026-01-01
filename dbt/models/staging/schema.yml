@@ -1,0 +1,89 @@
+version: 2
+
+models:
+  - name: stg_accounts
+    description: Cleaned account records
+    columns:
+      - name: account_id
+        tests:
+          - unique
+          - not_null
+      - name: segment
+        tests:
+          - accepted_values:
+              values: ['Enterprise', 'Mid-Market', 'SMB']
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['Active', 'Inactive']
+
+  - name: stg_subscriptions
+    description: Cleaned subscription records
+    columns:
+      - name: subscription_id
+        tests:
+          - unique
+          - not_null
+      - name: account_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_accounts')
+              field: account_id
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['Active', 'Cancelled']
+
+  - name: stg_invoices
+    description: Cleaned invoice records
+    columns:
+      - name: invoice_id
+        tests:
+          - unique
+          - not_null
+      - name: account_id
+        tests:
+          - relationships:
+              to: ref('stg_accounts')
+              field: account_id
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['Paid', 'Pending', 'Failed']
+
+  - name: stg_crm_deals
+    description: Cleaned CRM deal records
+    columns:
+      - name: deal_id
+        tests:
+          - unique
+          - not_null
+      - name: stage
+        tests:
+          - accepted_values:
+              values: ['Lead', 'MQL', 'SQL', 'Proposal', 'Negotiation', 'Closed Won', 'Closed Lost']
+
+  - name: stg_product_events
+    description: Cleaned product event records
+    columns:
+      - name: event_id
+        tests:
+          - unique
+          - not_null
+      - name: event_type
+        tests:
+          - accepted_values:
+              values: ['login', 'feature_use', 'activation', 'weekly_active']
+
+  - name: stg_support_tickets
+    description: Cleaned support ticket records
+    columns:
+      - name: ticket_id
+        tests:
+          - unique
+          - not_null
+      - name: severity
+        tests:
+          - accepted_values:
+              values: ['Low', 'Medium', 'High', 'Critical']

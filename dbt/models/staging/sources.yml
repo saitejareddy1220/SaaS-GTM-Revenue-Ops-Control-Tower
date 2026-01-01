@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: raw
+    database: "{{ env_var('POSTGRES_DB', 'saas_analytics') }}"
+    schema: public
+    tables:
+      - name: raw_accounts
+      - name: raw_users
+      - name: raw_subscriptions
+      - name: raw_invoices
+      - name: raw_payments
+      - name: raw_crm_deals
+      - name: raw_product_events
+      - name: raw_support_tickets
+      - name: raw_marketing_spend

@@ -1,0 +1,85 @@
+version: 2
+
+models:
+  - name: dim_date
+    description: Calendar dimension table
+    columns:
+      - name: date
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_account
+    description: Account dimension with current attributes
+    columns:
+      - name: account_id
+        tests:
+          - unique
+          - not_null
+
+  - name: fct_revenue_monthly
+    description: Monthly revenue metrics by account
+    columns:
+      - name: account_id
+        tests:
+          - relationships:
+              to: ref('dim_account')
+              field: account_id
+      - name: revenue_month
+        tests:
+          - relationships:
+              to: ref('dim_date')
+              field: date
+
+  - name: fct_pipeline
+    description: Pipeline and deal conversion metrics
+    columns:
+      - name: segment
+        tests:
+          - accepted_values:
+              values: ['Enterprise', 'Mid-Market', 'SMB']
+
+  - name: fct_activation
+    description: User activation metrics by account
+    columns:
+      - name: account_id
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              to: ref('dim_account')
+              field: account_id
+
+  - name: fct_retention
+    description: Cohort retention analysis
+    columns:
+      - name: cohort_month
+        tests:
+          - not_null
+
+  - name: fct_support
+    description: Support ticket metrics by account
+    columns:
+      - name: account_id
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              to: ref('dim_account')
+              field: account_id
+
+  - name: fct_cac_ltv
+    description: Customer acquisition cost and lifetime value by channel
+    columns:
+      - name: channel
+        tests:
+          - unique
+          - not_null
+
+  - name: fct_anomalies
+    description: Detected metric anomalies
+    columns:
+      - name: anomaly_type
+        tests:
+          - accepted_values:
+              values: ['Spike', 'Drop', 'Normal']
