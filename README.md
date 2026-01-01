@@ -58,11 +58,15 @@ This control tower provides unified visibility into:
 
 ## Dashboard Demo
 
-See the complete dashboard in action:
+A comprehensive demo video (`dashboard.mp4`) is available in the local repository showcasing all 5 pages of the interactive dashboard:
 
-[Dashboard Video](./dashboard.mp4)
+- Executive Overview with KPIs
+- Pipeline analytics and win rates  
+- Cohort retention heatmaps
+- Support metrics and SLA tracking
+- Automated anomaly detection
 
-*5-page interactive dashboard with executive KPIs, pipeline analytics, cohort retention, support metrics, and automated anomaly detection.*
+*Note: Video file excluded from repository due to size constraints. Available locally in project root.*
 
 ---
 
